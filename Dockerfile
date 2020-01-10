@@ -6,7 +6,8 @@
 # https://github.com/shadowsocks/v2ray-plugin
 # https://github.com/teddysun/v2ray-plugin # for upgrade v2ray-core to latest version
 
-FROM arm32v7/golang:alpine AS builder
+FROM multiarch/goxc:latest AS builder
+#FROM arm32v7/golang:alpine AS builder
 RUN set -ex \
 	&& apk add --no-cache git \
 	&& mkdir -p /go/src/github.com/shadowsocks \
@@ -16,7 +17,8 @@ RUN set -ex \
 	&& go get -d \
 	&& go build -o /go/bin/v2ray-plugin
 
-FROM arm32v7/alpine:latest
+FROM multiarch/alpine:armv7-edge
+# FROM arm32v7/alpine:latest
 LABEL maintainer="Teddysun <i@teddysun.com> <pengshp>pengshp3@outlook.com"
 
 RUN runDeps="\
