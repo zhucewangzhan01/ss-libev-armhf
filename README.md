@@ -98,19 +98,17 @@ There is an example to start a container that listens on `1080` :
 ```bash
 $ docker run -d -p 1080:1080/tcp -p 1080:1080/udp --name ss-libev --restart=always -v /etc/shadowsocks-libev:/etc/shadowsocks-libev pengshp/ss-libev-armhf
 ```
-### Use docker-compose
-Get docker-compose.yml, then change SERVER_ADDR and PASSWORD.
-
+### Usage
 Run these commands:
 ```bash
 ~$ firefox socks5://raspberrypi_ip:1080
 
 # On arm client (192.168.1.254)
-$ docker-compose up -d client-arm
+~$ docker-compose up -d client-arm
 
 # On any LAN PC (192.168.1.XXX)
-$ curl -x socks5h://192.168.1.234:1080 https://www.youtube.com/
-$ curl -x socks5h://192.168.1.254:1080 https://www.youtube.com/
+~$ curl -x socks5h://192.168.1.234:1080 https://www.youtube.com/
+~$ curl -x socks5h://192.168.1.254:1080 https://www.youtube.com/
 ```
 
 **Warning**: The port number must be same as configuration and opened in firewall.
