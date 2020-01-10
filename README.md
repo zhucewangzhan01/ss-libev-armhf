@@ -38,7 +38,7 @@ A sample in JSON like below:
 
 ```
 {
-    "server":"0.0.0.0",
+    "server":"server_ip",
     "server_port":9000,
     "local_address": "0.0.0.0",
     "local_port":1080,
@@ -55,7 +55,7 @@ If you want to enable **simple-obfs**, a sample in JSON like below:
 
 ```
 {
-    "server":"0.0.0.0",
+    "server":"server_ip",
     "server_port":9000,
     "local_address": "0.0.0.0",
     "local_port":1080,
@@ -74,7 +74,7 @@ If you want to enable **v2ray-plugin**, a sample in JSON like below:
 
 ```
 {
-    "server":"0.0.0.0",
+    "server":"server_ip",
     "server_port":9000,
     "local_address": "0.0.0.0",
     "local_port":1080,
@@ -98,7 +98,7 @@ There is an example to start a container that listens on `1080` :
 ```bash
 $ docker run -d -p 1080:1080/tcp -p 1080:1080/udp --name ss-libev --restart=always -v /etc/shadowsocks-libev:/etc/shadowsocks-libev pengshp/ss-libev-armhf
 ```
-### Usage
+### Use docker-compose
 Get docker-compose.yml, then change SERVER_ADDR and PASSWORD.
 
 Run these commands:
