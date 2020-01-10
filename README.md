@@ -28,7 +28,7 @@ It can be found at [Docker Hub][5].
 
 ## Start a container
 
-You **must create a configuration file**  `/etc/shadowsocks-libev/config.json` in host at first:
+You **must create a configuration file**  `/etc/shadowsocks-libev/client.json` in host at first:
 
 ```
 $ mkdir -p /etc/shadowsocks-libev
